@@ -7,10 +7,9 @@ const ExpenseFilter = (props) => {
 
   const dropDownChangeHandler = (event) => {
     const yearvar = event.currentTarget.value;
-    console.log(`before ${lastyear}`);
     setYear(yearvar);
     props.onChangeFilter(yearvar);
-    console.log(`after ${year}`);
+   
   };
   return (
     <div className="expenses-filter">

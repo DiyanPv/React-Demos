@@ -29,7 +29,6 @@ function DemoExpense(props) {
       <ExpenseFilter selected={year} onChangeFilter={filterChangeHandler} />
       {expensesContent}
     </div>
-    
   );
 }
 export default DemoExpense;

@@ -1,8 +1,10 @@
 import "./DemoExpense.css";
 import ExpenseFilter from "../Filter/ExpenseFilter";
 import ExpenseItem from "./ExpenseItem";
+
 import { useState } from "react";
 function DemoExpense(props) {
+
   const [year, setYear] = useState(`2022`);
 
   const filteredArr = props.items.filter(
@@ -27,6 +29,7 @@ function DemoExpense(props) {
   return (
     <div className="expenses">
       <ExpenseFilter selected={year} onChangeFilter={filterChangeHandler} />
+   
       {expensesContent}
     </div>
   );

@@ -4,9 +4,8 @@ import { useState } from "react";
 
 const NewExpense = (props) => {
   const [isVisible, setIsVisible] = useState(false);
-  
-  const saveExpenseDataHandler = (enteredExpenseData, prop) => {
 
+  const saveExpenseDataHandler = (enteredExpenseData, prop) => {
     const expenseData = {
       ...enteredExpenseData,
     };
@@ -15,7 +14,11 @@ const NewExpense = (props) => {
 
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveData={saveExpenseDataHandler} setIsVisible={setIsVisible} isVisible={isVisible} />
+      <ExpenseForm
+        onSaveData={saveExpenseDataHandler}
+        setIsVisible={setIsVisible}
+        isVisible={isVisible}
+      />
     </div>
   );
 };

@@ -24,3 +24,12 @@
     font-size: 1.5rem;
     font-weight: bold;
   }
+
+  .filteredExpenses__and__sortbymont{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+
+  }
+
+ 

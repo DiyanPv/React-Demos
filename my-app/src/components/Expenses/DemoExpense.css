@@ -5,6 +5,7 @@
   background-color: rgb(31, 31, 31);
   margin: 2rem auto;
   width: 50rem;
+  width: 80%;
   max-width: 95%;
   border-radius: 12px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
@@ -15,4 +16,13 @@ p {
   border: 1px solid white;
   text-align: center;
   padding: 20px 0;
+}
+
+.filteredExpenses__and__sortbymonth {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  align-items: center;
+  width: 85%;
+  max-width: 80%;
 }

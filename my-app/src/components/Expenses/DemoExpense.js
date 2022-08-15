@@ -3,8 +3,8 @@ import ExpenseFilter from "../Filter/ExpenseFilter";
 import ExpenseItem from "./ExpenseItem";
 
 import { useState } from "react";
+import ExpensesChart from "../Chart/FinalChartComponent";
 function DemoExpense(props) {
-
   const [year, setYear] = useState(`2022`);
 
   const filteredArr = props.items.filter(
@@ -27,10 +27,13 @@ function DemoExpense(props) {
     ));
   }
   return (
-    <div className="expenses">
-      <ExpenseFilter selected={year} onChangeFilter={filterChangeHandler} />
-   
-      {expensesContent}
+    <div className="filteredExpenses__and__sortbymonth">
+      <ExpensesChart></ExpensesChart>
+      <div className="expenses">
+        <ExpenseFilter selected={year} onChangeFilter={filterChangeHandler} />
+
+        {expensesContent}
+      </div>
     </div>
   );
 }

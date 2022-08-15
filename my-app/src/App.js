@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import DemoExpense from "./components/Expenses/DemoExpense";
 import NewExpense from "./components/NewExpenseInput/NewExpense";
-import ExpensesChart from "./components/Chart/FinalChartComponent";
+
 const Expenses = [];
 function App() {
   const [expenses, setExpenses] = useState(Expenses);
@@ -22,7 +22,6 @@ function App() {
       <h2 className="title-document">Expense Tracker DEMO</h2>
 
       <NewExpense onReceiveItem={addExpenseHandler} />
-      <ExpensesChart></ExpensesChart>
       <DemoExpense items={expenses} />
     </div>
   );

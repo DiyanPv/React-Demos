@@ -1,8 +1,8 @@
 import "./Chartbar.css";
 
-const ChartBar = ({ value, maxValue, key, label }) => {
+const ChartBar = ({ value, maxValue, label }) => {
   let barfillHeight = `0%`;
-  console.log(value);
+
   if (maxValue > 0) {
     barfillHeight = Math.round(value / maxValue) * 100 + `%`;
   }

@@ -1,9 +1,10 @@
 import "./Chart.css";
 import ChartBar from "./ChartBar";
 const Chart = ({ dataPoints }) => {
-  console.log(dataPoints);
+ const dataPointNums = dataPoints.map(el => Number(el.value));
+ const biggestNum = Math.max(...dataPointNums)
   return (<div className="chart">
-{dataPoints.map(datapoint=> <ChartBar key={datapoint.key} label={datapoint.label}></ChartBar>)}
+{dataPoints.map(datapoint=> <ChartBar key={datapoint.id} label={datapoint.label} value ={datapoint.value} maxValue={biggestNum}></ChartBar>)}
   </div>);
 };
 

@@ -11,6 +11,7 @@ function DemoExpense(props) {
     (el) => el.date.getFullYear() === Number(year)
   );
 
+
   const filterChangeHandler = (selectedYear) => {
     setYear(selectedYear);
   };
@@ -28,7 +29,7 @@ function DemoExpense(props) {
   }
   return (
     <div className="filteredExpenses__and__sortbymonth">
-      <ExpensesChart></ExpensesChart>
+      <ExpensesChart filteredArr={filteredArr}></ExpensesChart>
       <div className="expenses">
         <ExpenseFilter selected={year} onChangeFilter={filterChangeHandler} />
 

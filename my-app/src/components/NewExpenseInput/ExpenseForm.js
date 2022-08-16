@@ -40,7 +40,7 @@ const ExpenseForm = ({ onSaveData, setIsVisible, isVisible }) => {
 
       onSaveData(expenseData, false);
       setIsVisible(false);
-      console.log(isVisible);
+   
     }
   };
   if (isVisible) {

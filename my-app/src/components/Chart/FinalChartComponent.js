@@ -1,6 +1,6 @@
 import Chart from "./Chart";
 
-const ExpensesChart = () => {
+const ExpensesChart = ({ filteredArr }) => {
   let monthsArray = [
     { label: `Jan`, value: 0, id: "0000" + Math.random() + Math.random() },
     { label: `Feb`, value: 0, id: "0000" + Math.random() + Math.random() },
@@ -15,6 +15,10 @@ const ExpensesChart = () => {
     { label: `Nov`, value: 0, id: "0000" + Math.random() + Math.random() },
     { label: `Dec`, value: 0, id: "0000" + Math.random() + Math.random() },
   ];
+  for (let line of filteredArr) {
+const date = line.date.getMonth()
+monthsArray[date].value +=  line.price;
+  }
 
   return <Chart dataPoints={monthsArray} />;
 };

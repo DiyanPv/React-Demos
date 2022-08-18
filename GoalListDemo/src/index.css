@@ -4,8 +4,15 @@
 
 html {
   font-family: sans-serif;
+  background: linear-gradient(
+    0deg,
+    rgba(32, 151, 153, 1) 0%,
+    rgba(62, 43, 9, 1) 100%
+  );
+  background-position: center;
+  background-size: cover;
 }
-
+html, 
 body {
-  margin: 0;
+    height: 100%;
 }

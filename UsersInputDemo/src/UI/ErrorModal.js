@@ -4,6 +4,7 @@ import Card from "./Card";
 import Button from "./Button";
 
 const ErrorModal = ({ title, message, errorHandler }) => {
+  
   return (
     <div className={classes.backdrop} onClick={errorHandler}>
       <Card className={classes.modal}>

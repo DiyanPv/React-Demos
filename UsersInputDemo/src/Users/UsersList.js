@@ -1,19 +1,17 @@
 import React from "react";
 import classes from "./UsersList.module.css";
 import Card from "../UI/Card";
+import IndividualUser from "./IndividualUser";
 const UsersList = ({ users }) => {
   return (
     <Card className={classes.users}>
       <ul>
         {users.map((user) => (
-          <li>
-            {user.name} {user.age} years old
-          </li>
+          <IndividualUser name={user.name} age={user.age} key={Math.random() + `000` + Math.random()}/>
         ))}
       </ul>
     </Card>
   );
 };
-
 
 export default UsersList;

@@ -5,7 +5,7 @@ import IndividualUser from "./IndividualUser";
 const UsersList = ({ users }) => {
   return (
     <Card className={classes.users}>
-      <ul>
+      <ul class="ul-users">
         {users.map((user) => (
           <IndividualUser name={user.name} age={user.age} key={Math.random() + `000` + Math.random()}/>
         ))}

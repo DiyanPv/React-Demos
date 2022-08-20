@@ -4,7 +4,8 @@ import styles from "./IndividualUser.module.css";
 
 const IndividualUser = ({ name, age }) => {
   const deleteButtonHandler = (e) => {
-    console.log(e.target.parentNode);
+    const target = e.target.parentElement;
+    document.querySelector(".ul-users").removeChild(target);
   };
   return (
     <li className={styles.user}>

@@ -1,9 +1,12 @@
 .user {
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
 }
 .deletebtn {
   background-color: palegoldenrod;
+  padding: 3px 7px;
+  border: 2px solid black;
+  border-radius: 6px;
 }

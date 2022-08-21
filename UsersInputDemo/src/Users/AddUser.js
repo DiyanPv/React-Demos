@@ -34,6 +34,9 @@ const AddUser = ({ onAddUser }) => {
     }
 
     onAddUser(userNameInput, userAgeInput);
+    document.querySelector(`#username`).value = `Ne`;
+    document.querySelector(`#age`).value = ``;
+    console.log(document.querySelector(`#username`));
   };
 
   const errorHandler = () => {
@@ -41,7 +44,7 @@ const AddUser = ({ onAddUser }) => {
   };
 
   const userNameChangeHandler = (event) => {
-    const userNameInput = inputUsername.current.value;
+    let userNameInput = inputUsername.current.value;
     setUserName(userNameInput);
   };
 
@@ -87,3 +90,5 @@ const AddUser = ({ onAddUser }) => {
 };
 
 export default AddUser;
+
+

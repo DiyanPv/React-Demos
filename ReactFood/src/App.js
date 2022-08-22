@@ -1,6 +1,6 @@
 import Header from "./components/Layout/Header";
 import {Fragment} from "react";
-import Meals from "./components/UI/Meals";
+import Meals from "./components/UI/Meals/Meals";
 function App() {
   return (
     <Fragment>

@@ -5,8 +5,9 @@ import MealsSummary from "./MealsSummary";
 const Meals = () => {
   return (
     <Fragment>
-      <MealsList></MealsList>
       <MealsSummary></MealsSummary>
+
+      <MealsList></MealsList>
     </Fragment>
   );
 };

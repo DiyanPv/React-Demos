@@ -34,6 +34,7 @@ const MealsList = () => {
       price={meal.price}
       name={meal.name}
       id={meal.id}
+      key={Math.random() + `00` + Math.random()}
       description={meal.description}
     ></MealItem>
   ));

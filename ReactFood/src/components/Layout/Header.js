@@ -6,7 +6,7 @@ const Header = () => {
     <Fragment>
       <header className={classes.header}>
         <h1>FoodOrders</h1>
-     <HeaderCard></HeaderCard>
+        <HeaderCard></HeaderCard>
       </header>
       <div className={classes[`main-image`]}>
         <img

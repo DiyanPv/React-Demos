@@ -16,3 +16,21 @@
   font: inherit;
   padding-left: 0.5rem;
 }
+
+.fragment {
+  display: flex;
+  flex-direction: row;
+}
+.quantityButton {
+  border: none;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  background-color: #8a2b06;
+  color:white;
+  font-size: large;
+}
+.inputfield{
+  margin-right: 13px;
+text-align: right;
+}

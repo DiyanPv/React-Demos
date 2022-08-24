@@ -1,12 +1,12 @@
 import { Fragment } from "react";
 import classes from "./Header.module.css";
 import HeaderCard from "./HeaderCartButton";
-const Header = () => {
+const Header = ({modalStateTracker}) => {
   return (
     <Fragment>
       <header className={classes.header}>
-        <h1>FoodOrders</h1>
-        <HeaderCard></HeaderCard>
+        <h1>Food Orders</h1>
+        <HeaderCard modalStateTracker={modalStateTracker}></HeaderCard>
       </header>
       <div className={classes[`main-image`]}>
         <img

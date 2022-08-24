@@ -15,22 +15,26 @@ const Input = ({ input }) => {
     }
   };
   let stateChanger = {
-    "+": increaseChangeHandler,
-    "-": decreaseChangeHandler,
+    plus: increaseChangeHandler,
+    minus: decreaseChangeHandler,
   };
 
   return (
     <div className={styles.fragment}>
-      <button className={styles.quantityButton} onClick={stateChanger["-"]}>
+      <button className={styles.quantityButton} onClick={stateChanger.minus}>
         -
       </button>
       <div className={styles.input}>
         <label htmlFor={input.id} {...input}>
           {input.label}
         </label>
-        <input className={styles.inputfield} value={quantity}></input>
+        <input
+          className={styles.inputfield}
+          readOnly={quantity}
+          value={quantity}
+        ></input>
       </div>
-      <button className={styles.quantityButton} onClick={stateChanger["+"]}>
+      <button className={styles.quantityButton} onClick={stateChanger.plus}>
         +
       </button>
     </div>

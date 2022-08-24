@@ -26,6 +26,18 @@ const mealsListArr = [
     description: "Healthy...and green...",
     price: 18.99,
   },
+  {
+    id: "m5",
+    name: "Lasagna",
+    description: "Fillings can be personalised!",
+    price: 19.99,
+  },
+  {
+    id: "m5",
+    name: "Beef steak with gravy and potatoes",
+    description: "Well-done and with BBQ sauce!",
+    price: 29.99,
+  },
 ];
 
 const MealsList = () => {

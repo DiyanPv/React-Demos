@@ -1,9 +1,8 @@
 import classes from "./MealItemForm.module.css";
-
+import CartContext from "../../../store-contents-context/cart-context";
 import Input from "../../Input";
 import Commands from "../../../common/commands";
-const MealItemForm = ({state, stateChange}) => {
-
+const MealItemForm = ({ state, stateChange }) => {
   return (
     <div className={classes.form}>
       {state !== Commands.select ? (
@@ -15,13 +14,17 @@ const MealItemForm = ({state, stateChange}) => {
               min: 1,
               max: 5,
               step: 1,
-              defaultvalue: 1,
+              defaultValue: 1,
             }}
           ></Input>
-          <button className={classes.formbutton}>+ Add</button>
+          <button className={classes.formbutton} onClick={CartContext.addItem}>
+            + Add
+          </button>
         </div>
       ) : (
-        <button className={classes.formbutton} onClick={stateChange}>Select</button>
+        <button className={classes.formbutton} onClick={stateChange}>
+          Select
+        </button>
       )}
     </div>
   );

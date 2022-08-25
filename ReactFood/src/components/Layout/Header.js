@@ -1,12 +1,18 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import classes from "./Header.module.css";
 import HeaderCard from "./HeaderCartButton";
-const Header = ({modalStateTracker}) => {
+const Header = ({ modalStateTracker, cartItemsNumber }) => {
+
+
   return (
     <Fragment>
       <header className={classes.header}>
         <h1>Food Orders</h1>
-        <HeaderCard modalStateTracker={modalStateTracker}></HeaderCard>
+        <HeaderCard
+          modalStateTracker={modalStateTracker}
+        >
+          {" "}
+        </HeaderCard>
       </header>
       <div className={classes[`main-image`]}>
         <img

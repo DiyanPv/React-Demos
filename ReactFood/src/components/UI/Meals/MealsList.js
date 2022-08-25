@@ -40,9 +40,10 @@ const mealsListArr = [
   },
 ];
 
-const MealsList = () => {
+const MealsList = ({setCartItems}) => {
   const mealsList = mealsListArr.map((meal) => (
     <MealItem
+      setCartItems={setCartItems}
       price={meal.price}
       name={meal.name}
       id={meal.id}

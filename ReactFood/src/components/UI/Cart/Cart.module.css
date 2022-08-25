@@ -46,4 +46,21 @@
 
 .cartItem {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  border-radius: 9px;
+  padding: 3px 10px;
+}
+
+.itemName {
+  font-size: medium;
+  width: 15%;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border-radius: 12px;
+width: 75px;
+height: 35px;
 }

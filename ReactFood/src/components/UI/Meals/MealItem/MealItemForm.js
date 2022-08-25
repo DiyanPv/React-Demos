@@ -2,9 +2,22 @@ import classes from "./MealItemForm.module.css";
 import CartContext from "../../../store-contents-context/cart-context";
 import Input from "../../Input";
 import Commands from "../../../common/commands";
-const MealItemForm = ({ state, stateChange }) => {
+import { useState } from "react";
+const MealItemForm = ({ state, stateChange, onAddtoCart, setCartItems }) => {
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    const el = event.target.parentElement;
+    const enteredAmount = Number(el.querySelector(`input`).value);
+    if (enteredAmount.length === 0 || enteredAmount < 1 || enteredAmount > 5) {
+      throw new Error(`Invalid Number`);
+    } else {
+      onAddtoCart(enteredAmount);
+      setCartItems((prevstate) => prevstate += enteredAmount)
+    }
+  };
   return (
-    <div className={classes.form}>
+    <form className={classes.form} onSubmit={onSubmitHandler}>
       {state !== Commands.select ? (
         <div>
           <Input
@@ -17,16 +30,14 @@ const MealItemForm = ({ state, stateChange }) => {
               defaultValue: 1,
             }}
           ></Input>
-          <button className={classes.formbutton} onClick={CartContext.addItem}>
-            + Add
-          </button>
+          <button className={classes.formbutton}>+ Add</button>
         </div>
       ) : (
-        <button className={classes.formbutton} onClick={stateChange}>
+        <div className={classes.formbutton} onClick={stateChange}>
           Select
-        </button>
+        </div>
       )}
-    </div>
+    </form>
   );
 };
 

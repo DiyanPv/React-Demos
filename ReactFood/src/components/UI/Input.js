@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./Input.module.css";
 
+
 const Input = ({ input }) => {
   const [quantity, setQuantity] = useState(input.min);
 
@@ -21,9 +22,9 @@ const Input = ({ input }) => {
 
   return (
     <div className={styles.fragment}>
-      <button className={styles.quantityButton} onClick={stateChanger.minus}>
+      <div className={styles.quantityButton} onClick={stateChanger.minus}>
         -
-      </button>
+      </div>
       <div className={styles.input}>
         <label htmlFor={input.id} {...input}>
           {input.label}
@@ -34,9 +35,9 @@ const Input = ({ input }) => {
           value={quantity}
         ></input>
       </div>
-      <button className={styles.quantityButton} onClick={stateChanger.plus}>
+      <div className={styles.quantityButton} onClick={stateChanger.plus}>
         +
-      </button>
+      </div>
     </div>
   );
 };

@@ -1,12 +1,14 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useEffect } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../store-contents-context/cart-context";
 import classes from "./HeaderCart.module.css";
-const HeaderCard = ({ modalStateTracker, value }) => {
+
+const HeaderCard = ({ modalStateTracker }) => {
   const cartCtx = useContext(CartContext);
   const numberOfCartItems = cartCtx.items.reduce((currNum, item) => {
     return currNum + item.amount;
   }, 0);
+
   const icon = "fa-solid fa-cart-shopping";
   return (
     <button className={classes.button} onClick={modalStateTracker.clicked}>

@@ -1,6 +1,5 @@
 import React from "react";
 
-const removeItemFromCartHandler = (id) => {};
 const CartContext = React.createContext({
   items: [],
   totalAmount: 0,

@@ -29,6 +29,8 @@
   background-color: #8a2b06;
   color:white;
   font-size: large;
+  text-align: center;
+  cursor: pointer;
 }
 .inputfield{
   margin-right: 13px;

@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import classes from "./Header.module.css";
 import HeaderCard from "./HeaderCartButton";
 const Header = ({ modalStateTracker, cartItemsNumber }) => {

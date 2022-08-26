@@ -34,7 +34,7 @@ const mealsListArr = [
   },
   {
     id: "m5",
-    name: "Beef steak with gravy and potatoes",
+    name: "Beef steak",
     description: "Well-done and with BBQ sauce!",
     price: 29.99,
   },

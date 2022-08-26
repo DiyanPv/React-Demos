@@ -2,9 +2,10 @@ import Header from "./components/Layout/Header";
 import Meals from "./components/UI/Meals/Meals";
 import Cart from "./components/UI/Cart/Cart";
 import { useState } from "react";
-import CartProvider from "./components/store-contents-context/CartProvider";
-import classes from "./App.module.css"
+import classes from "./App.module.css";
+import CartProvider from "../src/components/store-contents-context/CartProvider";
 function App() {
+  const [cartAmount, setCartAmount] = useState();
 
   const [modalIsVisible, setModalIsVisible] = useState(false);
 
@@ -19,19 +20,28 @@ function App() {
     unclicked: invisibleModalHandler,
   };
 
-
-  const [cartItemsNumber,setCartItems] = useState(0);
+  const [cartItemsNumber, setCartItems] = useState(0);
   return (
-    <CartProvider >
+    <CartProvider>
       {modalIsVisible ? (
-        <Cart modalStateTracker={modalStateTracker}></Cart>
+        <Cart
+          modalStateTracker={modalStateTracker}
+          setCartAmount={setCartAmount}
+          cartAmount={cartAmount}
+        ></Cart>
       ) : (
-        `` 
+        ``
       )}
-      <Header modalStateTracker={modalStateTracker} cartItemsNumber={cartItemsNumber} />
-      <Meals setCartItems={setCartItems}/>
+      <Header
+        modalStateTracker={modalStateTracker}
+        cartItemsNumber={cartItemsNumber}
+      />
+      <Meals setCartItems={setCartItems} />
       <footer className={classes.footer}>
-      <p> © 2022 Diyan Yanev.    <span> All rights reserved</span>.</p>
+        <p>
+          {" "}
+          © 2022 Diyan Yanev. <span> All rights reserved</span>.
+        </p>
       </footer>
     </CartProvider>
   );

@@ -30,7 +30,7 @@ const MealItem = (props) => {
         <div className={classes.price}>{price}</div>
       </div>
       <MealItemForm
-      setCartItems={props.setCartItems}
+        setCartItems={props.setCartItems}
         state={isSelected}
         stateChange={stateChange}
         onAddtoCart={onAddtoCart}

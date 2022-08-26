@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useContext, useState } from "react";
+import React  from "react";
+import { useContext } from "react";
 import CartContext from "../store-contents-context/cart-context";
 import classes from "./HeaderCart.module.css";
 

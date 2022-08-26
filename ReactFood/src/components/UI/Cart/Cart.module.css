@@ -48,19 +48,41 @@
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
-  border: 2px solid black;
-  border-radius: 9px;
-  padding: 3px 10px;
+  border-bottom: 2px solid black;
+  width: 95%;
+  padding: 3px 5px;
+  align-items: center;
+  font-size: large;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-color: burlywood;
 }
 
 .itemName {
-  font-size: medium;
   width: 15%;
   flex-wrap: wrap;
 }
 
 .btn {
-  border-radius: 12px;
-width: 75px;
-height: 35px;
+  border-radius: 9px;
+  padding: 4px 13px;
+  margin: 0 4px;
+  background-color: white;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.itemamount {
+  font-size: small;
+  border: 0.3px solid black;
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+.btn:hover,
+.btn:active {
+  background-color: #5a1a01;
+  border-color: #5a1a01;
+  color: white;
 }

@@ -1,47 +1,32 @@
 import classes from "./MealsList.module.css";
 import Card from "../Card";
 import MealItem from "./MealItem/MealItem";
-const mealsListArr = [
-  {
-    id: "m1",
-    name: "Sushi",
-    description: "Finest fish and veggies",
-    price: 22.99,
-  },
-  {
-    id: "m2",
-    name: "Schnitzel",
-    description: "A german specialty!",
-    price: 16.5,
-  },
-  {
-    id: "m3",
-    name: "Barbecue Burger",
-    description: "American, raw, meaty",
-    price: 12.99,
-  },
-  {
-    id: "m4",
-    name: "Green Bowl",
-    description: "Healthy...and green...",
-    price: 18.99,
-  },
-  {
-    id: "m5",
-    name: "Lasagna",
-    description: "Fillings can be personalised!",
-    price: 19.99,
-  },
-  {
-    id: "m5",
-    name: "Beef steak",
-    description: "Well-done and with BBQ sauce!",
-    price: 29.99,
-  },
-];
+import { useEffect, useState } from "react";
+const server = `https://react-project-25ddf-default-rtdb.europe-west1.firebasedatabase.app/items.json`;
 
-const MealsList = ({setCartItems}) => {
-  const mealsList = mealsListArr.map((meal) => (
+const MealsList = ({ setCartItems }) => {
+  const [meals, setMeals] = useState([]);
+
+  useEffect(() => {
+    const mealsListArr = [];
+    const mealsList = async () => {
+      const res = await fetch(server);
+      const data = await res.json();
+      for (let key in data) {
+        mealsListArr.push({
+          id: key,
+          name: data[key].name,
+          description: data[key].description,
+          price: data[key].price,
+        });
+        console.log(data[key])
+      }
+      setMeals(mealsListArr);
+    };
+    mealsList()
+  }, []);
+
+  const mealsList = meals.map((meal) => (
     <MealItem
       setCartItems={setCartItems}
       price={meal.price}

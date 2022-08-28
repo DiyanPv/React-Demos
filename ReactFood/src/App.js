@@ -1,6 +1,7 @@
 import Header from "./components/Layout/Header";
 import Meals from "./components/UI/Meals/Meals";
 import Cart from "./components/UI/Cart/Cart";
+// import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import { useState } from "react";
 import classes from "./App.module.css";
 import CartProvider from "../src/components/store-contents-context/CartProvider";

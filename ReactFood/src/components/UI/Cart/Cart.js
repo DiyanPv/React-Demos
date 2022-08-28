@@ -7,7 +7,26 @@ import CartContext from "../../store-contents-context/cart-context";
 const isEmpty = (value) => value.trim() === ``;
 const isNotFiveChars = (value) => value.trim().length >= 5;
 const Cart = ({ modalStateTracker, cartAmount, setCartAmount }) => {
+  const [nameValue, setNameValue] = useState(``);
+  const [addressValue, setAddressValue] = useState(``);
+  const [postalCodeValue, setPostalCodeValue] = useState(``);
+  const [cityValue, setCityValue] = useState(``);
+
+  const setName = (event) => {
+    setNameValue(event.target.value);
+  };
+  const setAddress = (event) => {
+    setAddressValue(event.target.value);
+  };
+  const setPostalCode = (event) => {
+    setPostalCodeValue(event.target.value);
+  };
+  const setCity = (event) => {
+    setCityValue(event.target.value);
+  };
+  const url = `https://react-project-25ddf-default-rtdb.europe-west1.firebasedatabase.app/orders.json`;
   const [orderIsClicked, setOrderIsClicked] = useState(false);
+
   const [validityObject, setValidityObject] = useState({
     name: true,
     postalCode: true,
@@ -17,6 +36,7 @@ const Cart = ({ modalStateTracker, cartAmount, setCartAmount }) => {
   const orderButtonHandler = (event) => {
     setOrderIsClicked(true);
   };
+
   const confirmOrderHandler = (event) => {
     const form = event.target.parentElement.parentElement.querySelector(`form`);
     let [name, address, postalCode, city] = form;
@@ -52,6 +72,32 @@ const Cart = ({ modalStateTracker, cartAmount, setCartAmount }) => {
       return;
     } else {
       //submit card data to server
+      const body = {
+        name,
+        address,
+        postalCode,
+        city,
+      };
+
+      try {
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify({ body }),
+        }).then((res) => res.json());
+
+        setNameValue(``);
+        setCityValue(``);
+        setPostalCodeValue(``);
+        setAddressValue(``);
+        setTimeout(() => {
+          cancelButtonIsClicked();
+        }, 1500);
+      } catch (error) {
+        throw new Error(`Error message ${error}`);
+      }
     }
   };
 
@@ -107,7 +153,19 @@ const Cart = ({ modalStateTracker, cartAmount, setCartAmount }) => {
             <span>Total Amount:</span>
             <span>{`$${data.totalAmount.toFixed(2)}`}</span>
           </div>
-          {orderIsClicked && <CheckOut validityObject={validityObject} />}
+          {orderIsClicked && (
+            <CheckOut
+              validityObject={validityObject}
+              nameValue={nameValue}
+              addressValue={addressValue}
+              postalCodeValue={postalCodeValue}
+              cityValue={cityValue}
+              setName={setName}
+              setAddress={setAddress}
+              setCity={setCity}
+              setPostalCode={setPostalCode}
+            />
+          )}
         </>
       ) : (
         `Your cart is empty!`

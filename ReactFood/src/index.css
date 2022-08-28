@@ -7,10 +7,10 @@
 html {
   font-family: "Noto Sans JP", sans-serif;
   background-color: lightslategray;
+  height: 100%;
 }
 
 body {
   margin: 0;
-  
+  height: 100%;
 }
-

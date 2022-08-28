@@ -9,6 +9,12 @@ const MealsList = ({ setCartItems }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [httpError, setHttpError] = useState(null);
   useEffect(() => {
+
+    setTimeout(()=> {
+
+
+      
+    })
     const mealsListArr = [];
     const mealsList = async () => {
       setIsLoading(true);

@@ -6,11 +6,16 @@ const server = `https://react-project-25ddf-default-rtdb.europe-west1.firebaseda
 
 const MealsList = ({ setCartItems }) => {
   const [meals, setMeals] = useState([]);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [httpError, setHttpError] = useState(null);
   useEffect(() => {
     const mealsListArr = [];
     const mealsList = async () => {
+      setIsLoading(true);
       const res = await fetch(server);
+      if (!res.ok) {
+        throw new Error(`Something went wrong`);
+      }
       const data = await res.json();
       for (let key in data) {
         mealsListArr.push({
@@ -19,11 +24,16 @@ const MealsList = ({ setCartItems }) => {
           description: data[key].description,
           price: data[key].price,
         });
-        console.log(data[key])
+        console.log(data[key]);
       }
       setMeals(mealsListArr);
     };
-    mealsList()
+
+    mealsList().catch((error) => {
+      setIsLoading(false);
+      setHttpError(error.message);
+    });
+    setIsLoading(false);
   }, []);
 
   const mealsList = meals.map((meal) => (
@@ -36,6 +46,13 @@ const MealsList = ({ setCartItems }) => {
       description={meal.description}
     ></MealItem>
   ));
+  if (isLoading) {
+    return <p>Loading....</p>;
+  }
+
+  if (httpError !== null) {
+    return <p className={classes.error}>{httpError}</p>;
+  }
   return (
     <section className={classes.meals}>
       <Card>

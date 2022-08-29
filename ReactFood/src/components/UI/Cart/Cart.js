@@ -7,6 +7,7 @@ import CartContext from "../../store-contents-context/cart-context";
 const isEmpty = (value) => value.trim() === ``;
 const isNotFiveChars = (value) => value.trim().length >= 5;
 const Cart = ({ modalStateTracker, cartAmount, setCartAmount }) => {
+  const data = useContext(CartContext);
   const [nameValue, setNameValue] = useState(``);
   const [addressValue, setAddressValue] = useState(``);
   const [postalCodeValue, setPostalCodeValue] = useState(``);
@@ -94,7 +95,8 @@ const Cart = ({ modalStateTracker, cartAmount, setCartAmount }) => {
         setAddressValue(``);
         setTimeout(() => {
           cancelButtonIsClicked();
-        }, 1500);
+          data.clearCart()
+        }, 1200);
       } catch (error) {
         throw new Error(`Error message ${error}`);
       }
@@ -105,8 +107,9 @@ const Cart = ({ modalStateTracker, cartAmount, setCartAmount }) => {
     setOrderIsClicked(false);
     modalStateTracker.unclicked();
   };
-  const data = useContext(CartContext);
+
   const onAddtoCart = (item) => {
+    console.log(item);
     data.addItem({ ...item, amount: 1 });
   };
   const onRemoveHandler = (id) => {

@@ -2,16 +2,18 @@ import classes from "./MealItemForm.module.css";
 import Input from "../../Input";
 import Commands from "../../../common/commands";
 const MealItemForm = ({ state, stateChange, onAddtoCart, setCartItems }) => {
-
   const onSubmitHandler = (event) => {
     event.preventDefault();
     const el = event.target.parentElement;
     const enteredAmount = Number(el.querySelector(`input`).value);
+    console.log(enteredAmount);
     if (enteredAmount.length === 0 || enteredAmount < 1 || enteredAmount > 5) {
       throw new Error(`Invalid Number`);
     } else {
       onAddtoCart(enteredAmount);
-      setCartItems((prevstate) => prevstate += enteredAmount)
+      setCartItems((prevstate) => {
+        return (prevstate += enteredAmount);
+      });
     }
   };
   return (

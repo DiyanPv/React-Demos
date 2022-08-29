@@ -1,50 +1,26 @@
-import Header from "./components/Layout/Header";
-import Meals from "./components/UI/Meals/Meals";
-import Cart from "./components/UI/Cart/Cart";
-// import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import classes from "./App.module.css";
-import CartProvider from "../src/components/store-contents-context/CartProvider";
+import React from "react";
+import HomePage from "./components/pages/HomePage";
+import MealItemModal from "./components/UI/Meals/MealItem/MealItemModal";
 function App() {
-  const [cartAmount, setCartAmount] = useState();
-
-  const [modalIsVisible, setModalIsVisible] = useState(false);
-
-  const visibleModalHandler = () => {
-    setModalIsVisible(true);
-  };
-  const invisibleModalHandler = () => {
-    setModalIsVisible(false);
-  };
-  const modalStateTracker = {
-    clicked: visibleModalHandler,
-    unclicked: invisibleModalHandler,
-  };
-
-  const [cartItemsNumber, setCartItems] = useState(0);
+  const welcomepagelink = ["/", "/home", "/welcome"];
+  const [modalItem, setModalItem] = useState(null);
+ 
   return (
-    <CartProvider>
-      {modalIsVisible ? (
-        <Cart
-          modalStateTracker={modalStateTracker}
-          setCartAmount={setCartAmount}
-          cartAmount={cartAmount}
-        ></Cart>
-      ) : (
-        ``
-      )}
-      <Header
-        modalStateTracker={modalStateTracker}
-        cartItemsNumber={cartItemsNumber}
-      />
-      <Meals setCartItems={setCartItems} />
-      <footer className={classes.footer}>
-        <p>
-          {" "}
-          © 2022 Diyan Yanev. <span> All rights reserved</span>.
-        </p>
-      </footer>
-    </CartProvider>
+    <Router>
+      <Routes>
+        <Route
+          path={welcomepagelink[0]}
+          element={
+            <>
+              <HomePage setModalItem={setModalItem}></HomePage>
+              {modalItem && <MealItemModal setModalItem={setModalItem} modalItem={modalItem} />}
+            </>
+          }
+        ></Route>
+      </Routes>
+    </Router>
   );
 }
 

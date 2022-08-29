@@ -1,20 +1,20 @@
 import classes from "./MealsList.module.css";
+import classesMealItemForm from "../Meals/MealItem/MealItemForm.module.css";
+import styles from "../Input.module.css";
+
+
 import Card from "../Card";
 import MealItem from "./MealItem/MealItem";
 import { useEffect, useState } from "react";
 const server = `https://react-project-25ddf-default-rtdb.europe-west1.firebasedatabase.app/items.json`;
 
-const MealsList = ({ setCartItems }) => {
+const MealsList = ({ setModalItem,setCartItems }) => {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [httpError, setHttpError] = useState(null);
+
   useEffect(() => {
-
-    setTimeout(()=> {
-
-
-      
-    })
+    setTimeout(() => {});
     const mealsListArr = [];
     const mealsList = async () => {
       setIsLoading(true);
@@ -29,6 +29,7 @@ const MealsList = ({ setCartItems }) => {
           name: data[key].name,
           description: data[key].description,
           price: data[key].price,
+          imgUrl: data[key].imgUrl
         });
         console.log(data[key]);
       }
@@ -42,9 +43,18 @@ const MealsList = ({ setCartItems }) => {
     setIsLoading(false);
   }, []);
 
+  const handleOnClick = (event,item) => {
+    if(event.target.className !== classesMealItemForm.formbutton && event.target.className !== styles.quantityButton){
+      setModalItem(item);
+    }
+    
+  };
+
   const mealsList = meals.map((meal) => (
     <MealItem
       setCartItems={setCartItems}
+      handleOnClick={(event) => handleOnClick(event,meal)}
+      setModalItem={setModalItem}
       price={meal.price}
       name={meal.name}
       id={meal.id}

@@ -15,15 +15,24 @@ const MealItem = (props) => {
   const price = `$${props.price.toFixed(2)}`;
 
   const onAddtoCart = (amount) => {
+    console.log(props);
+    console.log(ctx);
     ctx.addItem({
       id: props.id,
       name: props.name,
       amount,
       price: props.price,
     });
+
+    console.log(ctx.items)
   };
   return (
-    <li className={classes.meal} key={props.id} id={props.id}>
+    <li
+      className={classes.meal}
+      key={props.id}
+      id={props.id}
+      onClick={props.handleOnClick}
+    >
       <div>
         <h3>{props.name}</h3>
         <div className={classes.description}> {props.description}</div>

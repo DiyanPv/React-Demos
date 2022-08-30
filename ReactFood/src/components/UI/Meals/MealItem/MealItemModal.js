@@ -1,6 +1,6 @@
 import Modal from "../../Cart/Modal";
-import classes from "../../Cart/Cart.module.css";
-import classess from "./MealItemModal.module.css"
+
+import classess from "./MealItemModal.module.css";
 const MealItemModal = ({ setModalItem, modalItem }) => {
   console.log(modalItem);
   const setModalItemFalse = () => {
@@ -8,13 +8,21 @@ const MealItemModal = ({ setModalItem, modalItem }) => {
   };
   return (
     <Modal>
-      <div>
+      <div className={classess.mainDiv}>
         <h1>Dish: {modalItem.name}</h1>
-        <img src={modalItem.imgUrl} alt="no image found" className={classess.img} />
+        <div className={classess.divImg}>
+          <img
+            src={modalItem.imgUrl}
+            alt="no image found"
+            className={classess.img}
+          />
+        </div>
       </div>
-      <button className={classes.btn} onClick={setModalItemFalse}>
+      <div className={classess.btnDiv}>
+      <button className={classess.btn} onClick={setModalItemFalse}>
         Cancel
       </button>
+      </div>
     </Modal>
   );
 };

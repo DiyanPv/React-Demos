@@ -1,0 +1,23 @@
+.btn {
+  display: block;
+  max-height: 9rem;
+  border-radius: 9px;
+  padding: 3rem 10rem;
+  background-color: white;
+  font-size: medium;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 33%;
+}
+a {
+  text-decoration: none;
+}
+.btn:hover,
+.btn:active {
+  background-color: #5a1a01;
+  border-color: #5a1a01;
+  color: white;
+}

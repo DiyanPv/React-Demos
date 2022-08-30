@@ -3,7 +3,7 @@ import Meals from "../UI/Meals/Meals";
 import Cart from "../UI/Cart/Cart";
 import { useState } from "react";
 import classes from "../../App.module.css";
-import MealItemModal from "../UI/Meals/MealItem/MealItemModal";
+// import MealItemModal from "../UI/Meals/MealItem/MealItemModal";
 import CartProvider from "../store-contents-context/CartProvider";
 
 const HomePage = ({ setModalItem }) => {
@@ -36,7 +36,7 @@ const HomePage = ({ setModalItem }) => {
         modalStateTracker={modalStateTracker}
         cartItemsNumber={cartItemsNumber}
       />
-      <Meals setCartItems={setCartItems} setModalItem={setModalItem} />
+      <Meals setCartItems={setCartItems} setModalItem={setModalItem}/>
 
       <footer className={classes.footer}>
         <p>

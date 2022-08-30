@@ -1,0 +1,12 @@
+.redirectPageHome {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("https://ucarecdn.com/682df8d3-695d-4522-b19e-b09d69090a52/");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}

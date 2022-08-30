@@ -5,7 +5,7 @@ import MealsSummary from "./MealsSummary";
 const Meals = ({setCartItems, setModalItem}) => {
   return (
     <Fragment>
-      <MealsSummary></MealsSummary>
+      <MealsSummary setModalItem={setModalItem}></MealsSummary>
 
       <MealsList setModalItem={setModalItem} setCartItems={setCartItems}></MealsList>
     </Fragment>

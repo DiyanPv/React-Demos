@@ -13,7 +13,7 @@ const MealItemModal = ({ setModalItem, modalItem }) => {
         <div className={classess.divImg}>
           <img
             src={modalItem.imgUrl}
-            alt="no image found"
+            alt="no dish found"
             className={classess.img}
           />
         </div>

@@ -95,7 +95,7 @@ const Cart = ({ modalStateTracker, cartAmount, setCartAmount }) => {
         setAddressValue(``);
         setTimeout(() => {
           cancelButtonIsClicked();
-          data.clearCart()
+          data.clearCart();
         }, 1200);
       } catch (error) {
         throw new Error(`Error message ${error}`);

@@ -25,6 +25,17 @@ const HomePage = ({ setModalItem }) => {
   const [cartItemsNumber, setCartItems] = useState(0);
   return (
     <CartProvider>
+      <Header
+        modalStateTracker={modalStateTracker}
+        cartItemsNumber={cartItemsNumber}
+      />
+     
+      <Meals setCartItems={setCartItems} setModalItem={setModalItem} />
+      <footer className={classes.footer}>
+        <p>
+          © 2022 Diyan Yanev. <span> All rights reserved</span>.
+        </p>
+      </footer>
       {modalIsVisible && (
         <Cart
           modalStateTracker={modalStateTracker}
@@ -32,17 +43,6 @@ const HomePage = ({ setModalItem }) => {
           cartAmount={cartAmount}
         ></Cart>
       )}
-      <Header
-        modalStateTracker={modalStateTracker}
-        cartItemsNumber={cartItemsNumber}
-      />
-      <Meals setCartItems={setCartItems} setModalItem={setModalItem}/>
-
-      <footer className={classes.footer}>
-        <p>
-          © 2022 Diyan Yanev. <span> All rights reserved</span>.
-        </p>
-      </footer>
     </CartProvider>
   );
 };

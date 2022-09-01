@@ -21,3 +21,9 @@ a {
   border-color: #5a1a01;
   color: white;
 }
+@media (max-width: 500px){
+
+  btn{
+    padding: 2rem 7rem;
+  }
+ }

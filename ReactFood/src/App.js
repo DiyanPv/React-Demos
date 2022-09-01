@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
-
+import NotFoundPage from "./components/pages/NotFoundPage";
 import React from "react";
 import HomePage from "./components/pages/HomePage";
 import MealItemModal from "./components/UI/Meals/MealItem/MealItemModal";
@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path={"/"} element={<RedirectToHomePage />}></Route>
-        <Route path={"*"} element={<RedirectToHomePage />}></Route>
+        <Route path={"*"} element={<NotFoundPage />}></Route>
         <Route
           exact
           path={"/homepage"}

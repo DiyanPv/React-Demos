@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
+.mainContent {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: url(https://www.wallpapersdsc.net/wp-content/uploads/2016/09/Food-for-desktop.jpg);
+  background-size: cover;
+  font-family: "Abril Fatface", cursive;
+}
+.pageText {
+  font-size: 2.3rem;
+  position: absolute;
+  color: white;
+}
+.pageTextNotFound {
+  font-size: 4rem;
+}
+.positionText {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+}
+
+@media (max-width: 500px){
+
+ html{
+    font-size: 9px;
+ }
+}

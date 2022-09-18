@@ -2,12 +2,15 @@ import React, { Fragment } from "react";
 import MealsList from "./MealsList";
 import MealsSummary from "./MealsSummary";
 
-const Meals = ({setCartItems, setModalItem}) => {
+const Meals = ({ setCartItems, setModalItem }) => {
   return (
     <Fragment>
-      <MealsSummary setModalItem={setModalItem}></MealsSummary>
+      <MealsSummary></MealsSummary>
 
-      <MealsList setModalItem={setModalItem} setCartItems={setCartItems}></MealsList>
+      <MealsList
+        setModalItem={setModalItem}
+        setCartItems={setCartItems}
+      ></MealsList>
     </Fragment>
   );
 };

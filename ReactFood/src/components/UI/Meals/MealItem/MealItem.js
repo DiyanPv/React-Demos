@@ -24,7 +24,7 @@ const MealItem = (props) => {
       price: props.price,
     });
 
-    console.log(ctx.items)
+    console.log(ctx.items);
   };
   return (
     <li

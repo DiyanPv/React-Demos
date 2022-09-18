@@ -25,7 +25,7 @@ const Cart = ({ modalStateTracker, cartAmount, setCartAmount }) => {
   const setCity = (event) => {
     setCityValue(event.target.value);
   };
-  const url = `https://react-project-25ddf-default-rtdb.europe-west1.firebasedatabase.app/orders.json`;
+  const url = `https://diyan-test-default-rtdb.europe-west1.firebasedatabase.app/orders.json`;
   const [orderIsClicked, setOrderIsClicked] = useState(false);
 
   const [validityObject, setValidityObject] = useState({

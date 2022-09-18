@@ -6,7 +6,7 @@ import styles from "../Input.module.css";
 import Card from "../Card";
 import MealItem from "./MealItem/MealItem";
 import { useEffect, useState } from "react";
-const server = `https://react-project-25ddf-default-rtdb.europe-west1.firebasedatabase.app/items.json`;
+const server = `https://diyan-test-default-rtdb.europe-west1.firebasedatabase.app/items.json`;
 
 const MealsList = ({ setModalItem,setCartItems }) => {
   const [meals, setMeals] = useState([]);

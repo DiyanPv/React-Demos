@@ -5,8 +5,15 @@
 }
 
 html {
+  background: #1e5799;
+
+
+  background: linear-gradient(to bottom, #dbe3ec 0%, #dadbb9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
+  background-attachment: fixed;
+
   font-family: "Noto Sans JP", sans-serif;
-  background-color: lightslategray;
+
   height: 100%;
 }
 

@@ -1,7 +1,8 @@
 import classes from "./MealsList.module.css";
 import classesMealItemForm from "../Meals/MealItem/MealItemForm.module.css";
 import styles from "../Input.module.css";
-
+import { Spinner, SpinnerSize } from "@fluentui/react/lib/Spinner";
+// import { Label } from "@fluentui/react/lib/Label";
 import Card from "../Card";
 import MealItem from "./MealItem/MealItem";
 import { useEffect, useState, useContext } from "react";
@@ -69,7 +70,15 @@ const MealsList = ({ setModalItem, setCartItems }) => {
     ></MealItem>
   ));
   if (!isLoading) {
-    return <p className={classes.centered}>Loading....</p>;
+    return (
+      <div >
+        <Spinner
+          label="Loading..."
+          size={SpinnerSize.large}
+          className={classes.spinner}
+        />
+      </div>
+    );
   }
 
   if (httpError !== null) {

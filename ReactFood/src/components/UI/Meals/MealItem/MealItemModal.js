@@ -26,9 +26,7 @@ const MealItemModal = ({ setModalItem, modalItem }) => {
         </div>
       </Modal>
     );
-  } else {
-    <p>Loading....</p>;
-  }
+  } 
 };
 
 export default MealItemModal;

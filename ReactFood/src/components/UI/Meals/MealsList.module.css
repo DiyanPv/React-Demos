@@ -16,6 +16,13 @@
   margin: 0;
   padding: 0;
 }
+.spinner {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /* 
+  font-size: 1rem; */
+  color: black;
+}
 .error {
   text-align: center;
   color: red;

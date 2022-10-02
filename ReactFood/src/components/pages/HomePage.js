@@ -29,7 +29,7 @@ const HomePage = ({ setModalItem }) => {
         modalStateTracker={modalStateTracker}
         cartItemsNumber={cartItemsNumber}
       />
-     
+
       <Meals setCartItems={setCartItems} setModalItem={setModalItem} />
       <footer className={classes.footer}>
         <p>

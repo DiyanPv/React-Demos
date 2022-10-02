@@ -11,15 +11,11 @@ const server = `https://diyan-test-default-rtdb.europe-west1.firebasedatabase.ap
 
 const MealsList = ({ setModalItem, setCartItems }) => {
   const ctx = useContext(Context);
-  console.log(ctx);
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [httpError, setHttpError] = useState(null);
   ctx.isLoading = isLoading;
   useEffect(() => {
-    setTimeout(() => {
-      mealsList();
-    }, 1500);
     const mealsListArr = [];
     const mealsList = async () => {
       setIsLoading(true);
@@ -36,16 +32,16 @@ const MealsList = ({ setModalItem, setCartItems }) => {
           price: data[key].price,
           imgUrl: data[key].imgUrl,
         });
-        console.log(data[key]);
       }
       setMeals(mealsListArr);
     };
-
-    mealsList().catch((error) => {
+    setTimeout(async () => {
+      return await mealsList().catch((error) => {
+        setIsLoading(false);
+        setHttpError(error.message);
+      });
       setIsLoading(false);
-      setHttpError(error.message);
-    });
-    setIsLoading(false);
+    }, 300);
   }, []);
 
   const handleOnClick = (event, item) => {
@@ -56,7 +52,7 @@ const MealsList = ({ setModalItem, setCartItems }) => {
       setModalItem(item);
     }
   };
-
+  meals.forEach((el) => console.log(el));
   const mealsList = meals.map((meal) => (
     <MealItem
       setCartItems={setCartItems}
@@ -71,7 +67,7 @@ const MealsList = ({ setModalItem, setCartItems }) => {
   ));
   if (!isLoading) {
     return (
-      <div >
+      <div>
         <Spinner
           label="Loading..."
           size={SpinnerSize.large}

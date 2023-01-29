@@ -5,7 +5,7 @@ import ExpenseItem from "./ExpenseItem";
 import { useState } from "react";
 import ExpensesChart from "../Chart/FinalChartComponent";
 function DemoExpense(props) {
-  const [year, setYear] = useState(`2022`);
+  const [year, setYear] = useState(2023);
 
   const filteredArr = props.items.filter(
     (el) => el.date.getFullYear() === Number(year)

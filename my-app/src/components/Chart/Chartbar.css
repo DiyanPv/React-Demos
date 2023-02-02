@@ -9,7 +9,7 @@
 
 .chart-bar__inner {
   height: 100%;
-  width: 100%;
+ 
   box-shadow: 0px 1px 19px 5px rgba(0, 0, 0, 0.89);
   border-radius: 12px;
   background-color: #c3b4f3;
@@ -32,3 +32,26 @@ transition-delay: 0.9ms ease-in-out;
   font-size: 14px;
   padding-bottom: 5px;
 }
+
+@media (max-width: 300 ){
+  .chart-bar__inner{
+    width: 55%;
+  }
+  }
+@media (max-width: 430px ){
+.chart-bar__inner{
+  width: 75%;
+}
+}
+
+@media (min-width: 430px ){
+  .chart-bar__inner{
+    width: 140%;
+  }
+  }
+
+  @media (min-width: 1500px ){
+    .chart-bar__inner{
+      width: 180%;
+    }
+    }
